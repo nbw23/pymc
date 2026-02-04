@@ -1117,7 +1117,6 @@ class ZarrTrace:
             "sample_stats",
             "warmup_posterior",
             "warmup_sample_stats",
-            "constant_data",
             "observed_data",
             "_sampling_state",
         }
@@ -1137,7 +1136,6 @@ class ZarrTrace:
         self.include_transformed = "unconstrained_posterior" in groups
         arrays = itertools.chain(
             self.posterior.arrays(),
-            self.constant_data.arrays(),
             self.observed_data.arrays(),
         )
         if self.include_transformed:
